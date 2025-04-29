@@ -1,5 +1,6 @@
 from django.urls import path
 from .views import (
+    api_root,
     register_user,
     login_user,
     topic_list,
@@ -13,6 +14,7 @@ from .views import (
 )
 
 urlpatterns = [
+    path('', api_root),
     path('register/', register_user, name='register_user'),
     path('login/', login_user, name='login_user'),
     path('topics/', topic_list, name='topic_list'),

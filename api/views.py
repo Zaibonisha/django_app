@@ -12,6 +12,23 @@ import os
 import openai
 
 # Register a new user
+@api_view(['GET'])
+@permission_classes([AllowAny])
+def api_root(request):
+    return Response({
+        "message": "Welcome to the API!",
+        "available_endpoints": {
+            "login": "/api/login/",
+            "register": "/api/register/",
+            "topics": "/api/topics/",
+            "resources": "/api/resources/",
+            "generate_study_plan": "/api/generate-study-plan/",
+            "mental_health_practices": "/api/mental-health-practices/",
+            "ai_tutor": "/api/ai-tutor/",
+            "flashcards": "/api/flashcards/"
+        }
+    })
+
 @api_view(['POST'])
 @permission_classes([AllowAny])  # This allows unauthenticated access to this route
 def register_user(request):
