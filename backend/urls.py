@@ -16,11 +16,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-#from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+from django.http import HttpResponse
+
+def home(request):
+    return HttpResponse("Welcome! The API is live. Visit /api/ for endpoints.")
 
 urlpatterns = [
+    path('', home),  # Add this line for root access
     path('admin/', admin.site.urls),
-    path('api/', include('api.urls')),  # Include the API routes
+    path('api/', include('api.urls')),
 ]
-
-#urlpatterns += staticfiles_urlpatterns()
