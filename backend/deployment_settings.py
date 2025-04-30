@@ -22,11 +22,11 @@ MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
 ]
 
-"""
+
 CORS_ALLOWS_CREDENTIALS = CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",  # or whatever port your React app is on
+    "https://react-edu-app.onrender.com",  # or whatever port your React app is on
 ]
-"""
+
 
 STORAGES = {
     "default":{
